@@ -230,7 +230,7 @@ export default function Home() {
                     {/* Before Side */}
                     <div className="absolute inset-0 w-1/2 left-0 h-full">
                       <Image
-                        src="/placeholder.svg?height=720&width=640"
+                        src="images/heel_before.png"
                         alt="Before transformation"
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -247,7 +247,7 @@ export default function Home() {
                     {/* After Side */}
                     <div className="absolute inset-0 w-1/2 left-1/2 h-full">
                       <Image
-                        src="/placeholder.svg?height=720&width=640"
+                        src="images/heel_after-min.png"
                         alt="After transformation"
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -403,15 +403,11 @@ export default function Home() {
               {galleryImages.map((image, index) => (
                 <div
                   key={index}
-                  className="relative aspect-square bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
+                  className="relative aspect-[4/3] bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
                 >
                   <div className="relative w-full h-full">
                     <Image
-                      src={
-                        showAfter
-                          ? `/placeholder.svg?height=400&width=400&text=After+${index + 1}`
-                          : `/placeholder.svg?height=400&width=400&text=Before+${index + 1}`
-                      }
+                      src={showAfter ? image.after || `/placeholder.svg?height=400&width=400&text=After+${index + 1}` : image.before}
                       alt={image.alt}
                       fill
                       className="object-cover"
@@ -473,7 +469,7 @@ export default function Home() {
                   <p className="text-gray-600 text-base mb-6">{steps[selectedStep].description}</p>
                   <div className="relative aspect-[4/3] bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-lg overflow-hidden">
                     <Image
-                      src={`/placeholder.svg?height=600&width=800&text=${steps[selectedStep].title}`}
+                      src={steps[selectedStep].image}
                       alt={steps[selectedStep].alt}
                       fill
                       className="object-cover"
@@ -518,7 +514,7 @@ export default function Home() {
                 {/* Image Display */}
                 <div className="relative aspect-[4/3] bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-xl overflow-hidden shadow-lg">
                   <Image
-                    src={`/placeholder.svg?height=600&width=800&text=${steps[selectedStep].title}`}
+                    src={steps[selectedStep].image}
                     alt={steps[selectedStep].alt}
                     fill
                     className="object-cover transition-all duration-500"
@@ -715,19 +711,19 @@ const steps = [
   {
     title: "Upload Your Photo",
     description: "Simply drag and drop your product photo. Any background, any lighting - we handle it all.",
-    image: "/placeholder.svg?height=600&width=800&text=Upload+Photo",
+    image: "images/how-it-works/upload-product-2.jpg",
     alt: "Upload product photo",
   },
   {
     title: "Choose Your Style",
     description: "Select from our curated collection of professional backgrounds and styles.",
-    image: "/placeholder.svg?height=600&width=800&text=Choose+Style",
+    image: "images/how-it-works/43.jpg",
     alt: "Select background style",
   },
   {
     title: "Get Perfect Results",
     description: "Download your professionally enhanced product photos in seconds.",
-    image: "/placeholder.svg?height=600&width=800&text=Perfect+Results",
+    image: "images/how-it-works/download-anywhere.png",
     alt: "Download results",
   },
 ]
@@ -773,44 +769,44 @@ const socialLinks = [
 
 const galleryImages: GalleryImage[] = [
   {
-    before: "",
-    after: "",
-    alt: "Shoe product transformation",
+    before: "/images/examples-gallery/before/1.jpg",
+    after: "/images/examples-gallery/after/1.jpg",
+    alt: "Camping tent product transformation",
   },
   {
-    before: "",
-    after: "",
-    alt: "Shoe product transformation",
+    before: "/images/examples-gallery/before/2.jpg",
+    after: "/images/examples-gallery/after/2.jpg",
+    alt: "Teddy bear product transformation",
   },
   {
-    before: "",
-    after: "",
-    alt: "Shoe product transformation",
+    before: "/images/examples-gallery/before/3.jpg",
+    after: "/images/examples-gallery/after/3.jpg",
+    alt: "Chocolate bar product transformation",
   },
   {
-    before: "",
-    after: "",
-    alt: "Shoe product transformation",
+    before: "/images/examples-gallery/before/4.jpg",
+    after: "/images/examples-gallery/after/4.jpg",
+    alt: "Smart watch product transformation",
   },
   {
-    before: "",
-    after: "",
-    alt: "Shoe product transformation",
+    before: "/images/examples-gallery/before/5.jpg",
+    after: "/images/examples-gallery/after/5.jpg",
+    alt: "Perfume product transformation",
   },
   {
-    before: "",
-    after: "",
-    alt: "Shoe product transformation",
+    before: "/images/examples-gallery/before/6.jpg",
+    after: "/images/examples-gallery/after/6.jpg",
+    alt: "Sunglasses product transformation",
   },
   {
-    before: "",
-    after: "",
-    alt: "Shoe product transformation",
+    before: "/images/examples-gallery/before/7.jpg",
+    after: "/images/examples-gallery/after/7.jpg",
+    alt: "T-Shirt product transformation",
   },
   {
-    before: "",
-    after: "",
-    alt: "Shoe product transformation",
+    before: "/images/examples-gallery/before/8.jpg",
+    after: "/images/examples-gallery/after/8.jpg",
+    alt: "Lipstick product transformation",
   },
 ]
 
